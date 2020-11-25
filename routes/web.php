@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\principal;
+use App\Http\Controllers\Catalogo\gato;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+        Route::get('/' , [principal::class, 'index']);
+        Route::get('Catalogo/gatos/{id}',[gato::class, 'gatos']); 
+        Route::get('Catalogo/perros/{id}',[gato::class, 'perro']);  
+         
+        Route::get('Contactos', [principal::class, 'contactos']);
+          
